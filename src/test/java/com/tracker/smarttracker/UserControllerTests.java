@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -88,7 +89,7 @@ class UserControllerTests {
 	void testDeleteRequestToUsersWithValidUser_thenCorrectResponse() throws Exception {
 		var user = "{\"firstName\": \"Joe\", \"lastName\": \"Doe\", \"birthDate\": \"2000-12-15\", \"sex\": \"MALE\"}";
 		var savedUser = userRepository.save(User.builder()
-											 .birthDate(LocalDate.now())
+											 .birthDate(LocalDate.parse("2000-12-15"))
 											 .firstName("Joe")
 											 .lastName("Doe")
 											 .sex(Sex.MALE)
@@ -114,7 +115,7 @@ class UserControllerTests {
 												.id(savedUser.getId())
 												.firstName("Jane")
 												.lastName("Doe")
-												.birthDate(LocalDate.now().minusYears(7))
+												.birthDate(LocalDate.parse("2000-12-15"))
 												.sex(Sex.FEMALE)
 												.build();
 
@@ -123,6 +124,6 @@ class UserControllerTests {
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(result -> assertThat(result.getResponse().getContentAsString(),
 						is("{\"id\":"+savedUser.getId()+",\"firstName\":\"Jane\",\"lastName\":\"Doe\"," +
-								"\"birthDate\":\"2016-12-15\",\"sex\":\"FEMALE\"}")));
+								"\"birthDate\":\"2000-12-15\",\"sex\":\"FEMALE\"}")));
 	}
 }
