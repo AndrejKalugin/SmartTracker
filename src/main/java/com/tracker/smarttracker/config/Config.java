@@ -22,6 +22,7 @@ public class Config {
 
         var propertyMapperRaceRecord = modelMapper.createTypeMap(RaceRecordDto.class, Race.class);
         Condition<RaceRecordDto, Race> condition = ConverterHelper::getCondition;
+        propertyMapperRaceRecord.addMappings(mapper -> mapper.skip(Race::setId));
         propertyMapperRaceRecord.addMappings(mapper -> mapper.when(condition).map(RaceRecordDto::getLatitude, Race::setStartLatitude));
         propertyMapperRaceRecord.addMappings(mapper -> mapper.when(condition).map(RaceRecordDto::getLongitude, Race::setStartLongitude));
         propertyMapperRaceRecord.addMappings(mapper -> mapper.when(condition).map(RaceRecordDto::getDatetime, Race::setStartDatetime));

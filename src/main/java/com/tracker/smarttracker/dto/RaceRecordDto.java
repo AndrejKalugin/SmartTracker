@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class RaceRecordDto {
-    @NotNull
+    @NotNull(message = "user Id shouldn't be null value")
     private Long userId;
 
-    @Min(-90)
-    @Max(90)
+    @Min(message = "latitude should be greater -90 degree", value = -90)
+    @Max(message = "latitude shouldn't be greater 90 degree", value = 90)
     private BigDecimal latitude;
 
-    @Min(-180)
-    @Max(180)
+    @Min(message = "longitude should be greater -180 degree", value = -180)
+    @Max(message = "longitude shouldn't be greater 180 degree", value = 180)
     private BigDecimal longitude;
 
     @PastOrPresent(message = "Enter correct start datetime")

@@ -25,8 +25,10 @@ public class SmartTrackController {
 
     @GetMapping("/users/{id}/races/analytics")
     public RaceAnalyticsDto getUserRaceAnalytics(@PathVariable(name = "id") long userId,
-                                                       @RequestParam(value = "from_datetime", required = false) LocalDateTime fromDatetime,
-                                                       @RequestParam(value = "to_datetime", required = false) LocalDateTime toDatetime) {
+                                                 @RequestParam(value = "from_datetime", required = false)
+                                                         LocalDateTime fromDatetime,
+                                                 @RequestParam(value = "to_datetime", required = false)
+                                                         LocalDateTime toDatetime) {
         return trackerService.getUserRaceAnalytics(userId, fromDatetime, toDatetime);
     }
 }

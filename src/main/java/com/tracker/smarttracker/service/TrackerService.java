@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +42,8 @@ public class TrackerService {
             sumDistance = sumDistance.add(userRace.getDistance());
             userSumSpeedPerPeriod = userSumSpeedPerPeriod.add(userRace.getAverageSpeed());
         }
-        BigDecimal userAverageSpeedPerPeriod = userSumSpeedPerPeriod.divide(BigDecimal.valueOf(finishedRaceCount));
+        BigDecimal userAverageSpeedPerPeriod = userSumSpeedPerPeriod.divide(BigDecimal.valueOf(finishedRaceCount),
+                2, RoundingMode.HALF_EVEN);
 
         return RaceAnalyticsDto.builder()
                                .userId(userId)

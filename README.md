@@ -22,7 +22,7 @@ mvn spring-boot:run
 
 ## DB configuration
 
-DB for the current project PostgreSQL, one config you should change are path to DB in application.properties:
+DB for the current project is PostgreSQL, you should change one configuration: the DB path in application.properties:
 
 > **spring.datasource.url**=jdbc:postgresql://127.0.0.1:5432/tracker
 > 
@@ -30,7 +30,7 @@ DB for the current project PostgreSQL, one config you should change are path to 
 
 ## ✨UI for the application
 
-use Swagger UI for convenience:
+For convenience, use the Swagger UI:
 
 > http://localhost:8080/swagger-ui/index.html
 
