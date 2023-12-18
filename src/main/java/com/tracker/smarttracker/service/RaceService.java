@@ -65,7 +65,7 @@ public class RaceService {
         raceRepository.save(resultRace);
     }
 
-    private BigDecimal getAverageSpeedByRace(Race race) {
+    public BigDecimal getAverageSpeedByRace(Race race) {
         var durationInSeconds = Duration.between(race.getStartDatetime(), race.getFinishDatetime()).getSeconds();
         var durationInMinutes = BigDecimal.valueOf(durationInSeconds).divide(SECONDS_TO_MINUTES,
                 DefaultBigDecimalMath.currentMathContext());

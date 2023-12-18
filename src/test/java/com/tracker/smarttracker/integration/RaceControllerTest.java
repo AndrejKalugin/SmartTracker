@@ -1,4 +1,4 @@
-package com.tracker.smarttracker;
+package com.tracker.smarttracker.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tracker.smarttracker.dto.RaceRecordDto;
@@ -7,7 +7,6 @@ import com.tracker.smarttracker.model.Sex;
 import com.tracker.smarttracker.model.User;
 import com.tracker.smarttracker.repo.RaceRepository;
 import com.tracker.smarttracker.repo.UserRepository;
-import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

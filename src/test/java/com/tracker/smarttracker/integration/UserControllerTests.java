@@ -1,4 +1,4 @@
-package com.tracker.smarttracker;
+package com.tracker.smarttracker.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tracker.smarttracker.dto.UserRecordDto;
@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

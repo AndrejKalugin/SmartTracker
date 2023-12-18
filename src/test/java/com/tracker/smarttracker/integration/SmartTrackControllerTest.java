@@ -1,4 +1,4 @@
-package com.tracker.smarttracker;
+package com.tracker.smarttracker.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tracker.smarttracker.model.Race;

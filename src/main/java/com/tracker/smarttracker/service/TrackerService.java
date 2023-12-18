@@ -4,7 +4,7 @@ import com.tracker.smarttracker.dto.RaceAnalyticsDto;
 import com.tracker.smarttracker.dto.RaceDto;
 import com.tracker.smarttracker.repo.RaceRepository;
 import com.tracker.smarttracker.util.ConverterHelper;
-import jakarta.persistence.EntityManagerFactory;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,6 @@ import java.util.Optional;
 public class TrackerService {
 
     RaceRepository raceRepository;
-    EntityManagerFactory entityManagerFactory;
     ConverterHelper converterHelper;
     static final LocalDateTime DEFAULT_TIME_MIN = LocalDateTime.now().minusYears(10);
     static final LocalDateTime DEFAULT_TIME_MAX = LocalDateTime.now().plusYears(10);
